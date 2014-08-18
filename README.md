@@ -1,7 +1,7 @@
 kdeplasma-applets-playbar
 =========================
 
-Client MPRIS2, allows you to control your favorite media player
+Client Mpris2, allows you to control your favorite media player
 
 URL = http://kde-look.org/content/show.php/PlayBar?content=165396
 

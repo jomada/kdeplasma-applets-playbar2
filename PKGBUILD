@@ -5,7 +5,7 @@ pkgdesc="Client Mpris2, allows you to control your favorite media player."
 arch=('x86_64')
 url="http://kde-apps.org/content/show.php?action=content&content=165396"
 license=('GPL')
-depends=('kde-workspace')
+depends=('kdelibs')
 makedepends=('gcc' 'cmake' 'automoc4')
 source=("https://github.com/audoban/PlayBar/archive/v0.7/PlayBar-$pkgver.tar.gz")
 md5sums=('adc3512aae6f57d45236c4dccc68e11e')

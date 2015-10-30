@@ -1,23 +1,32 @@
-pkgname=kdeplasma-applets-playbar
-pkgver=0.7
+pkgname=kdeplasma-applets-playbar2
+_name=PlayBar2
+pkgver=2.2
 pkgrel=1
-pkgdesc="Client Mpris2, allows you to control your favorite media player."
+pkgdesc="Mpris2 Client for Plasma5"
 arch=('x86_64')
-url="http://kde-apps.org/content/show.php?action=content&content=165396"
+url="https://github.com/audoban/PlayBar2"
 license=('GPL')
-depends=('kdelibs')
-makedepends=('gcc' 'cmake' 'automoc4')
-source=("https://github.com/audoban/PlayBar/archive/v0.7/PlayBar-$pkgver.tar.gz")
-md5sums=('adc3512aae6f57d45236c4dccc68e11e')
+depends=('plasma-framework' 'plasma-workspace' 'kdeclarative' 'kglobalaccel'
+    'kconfigwidgets' 'kxmlgui' 'kwindowsystem')
+makedepends=('kdoctools' 'extra-cmake-modules')
+source=("https://github.com/audoban/${_name}/archive/v${pkgver}.tar.gz")
+md5sums=('e3e69ab4719764856033247ef4170942')
+
+prepare() {
+    mkdir -p build
+}
 
 build() {
-cd $srcdir/PlayBar-${pkgver}
-mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-make
-}
-package() {
-cd $srcdir/PlayBar-${pkgver}/build
-make DESTDIR="$pkgdir/" install
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DLIB_INSTALL_DIR=lib \
+        -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+        ../${_name}-${pkgver}
+    make
 }
 
+package() {
+    cd build
+    make DESTDIR="$pkgdir" install
+}

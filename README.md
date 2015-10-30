@@ -1,9 +1,9 @@
 kdeplasma-applets-playbar
 =========================
 
-Client Mpris2, allows you to control your favorite media player
+Client Mpris2, allows you to control your favorite media player, now supports Plasma 5
 
-URL = http://kde-look.org/content/show.php/PlayBar?content=165396
+URL = https://github.com/audoban/PlayBar2
 
 Install with kcp:
 

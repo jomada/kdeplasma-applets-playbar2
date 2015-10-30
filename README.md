@@ -8,5 +8,5 @@ URL = https://github.com/audoban/PlayBar2
 Install with kcp:
 
 ```
-kcp -i kdeplasma-applets-playbar
+kcp -i kdeplasma-applets-playbar2
 ```
